@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes loginFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.login-fade-in {
+  animation: loginFadeIn 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@layer base {
+  body {
+    background-color: #080b11;
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 38, 56, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 38, 56, 0.3) 1px, transparent 1px);
+}
+
+.cyber-grid-dense {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+}
+
+/* Ambient Radial Glows */
+.ambient-glow-cyan {
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.15) 0%, rgba(8, 11, 17, 0) 70%);
+}
+
+.ambient-glow-orange {
+  background: radial-gradient(circle, rgba(251, 113, 133, 0.15) 0%, rgba(8, 11, 17, 0) 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080b11;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2638;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e3a54;
+}
+
+/* Neon Glow Utility Classes */
+.glow-player {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.35), inset 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+.glow-player-lg {
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.5), inset 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.glow-opponent {
+  box-shadow: 0 0 20px rgba(251, 113, 133, 0.35), inset 0 0 10px rgba(251, 113, 133, 0.15);
+}
+
+.glow-opponent-lg {
+  box-shadow: 0 0 35px rgba(251, 113, 133, 0.5), inset 0 0 15px rgba(251, 113, 133, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.4), inset 0 0 10px rgba(251, 191, 36, 0.2);
+}
+
+.text-glow-player {
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+}
+
+.text-glow-opponent {
+  text-shadow: 0 0 12px rgba(251, 113, 133, 0.6);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+}
+
+/* Cyber Card */
+.cyber-card {
+  background: #0e131f;
+  border: 1px solid #1e2638;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card:hover {
+  border-color: #2e3a54;
+  transform: translateY(-2px);
+}
+
+/* Radar Scan Line */
+@keyframes radar-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.radar-scanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+  animation: radar-line 2.5s ease-in-out infinite;
+}
